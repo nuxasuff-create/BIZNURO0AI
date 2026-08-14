@@ -1,0 +1,242 @@
+components/AdBanner.tsx:21:            <p className="text-xs text-slate-500 font-medium">বিজ্ঞাপন এখানে দেখানো হবে</p>
+components/BusinessTools.tsx:13:    title: 'ফেসবুক ও হোয়াটসঅ্যাপ ব্যবহার করুন',
+components/BusinessTools.tsx:14:    details: 'আপনার ব্যবসার নামে একটি ফেসবুক পেজ খুলুন। নতুন পণ্যের ছবি ও দাম পোস্ট করুন। নিয়মিত কাস্টমারদের হোয়াটসঅ্যাপ গ্রুপে অফার জানান।'
+components/BusinessTools.tsx:17:    title: 'ছোট ছাড় বা অফার দিন',
+components/BusinessTools.tsx:18:    details: 'নির্দিষ্ট টাকার বেশি কিনলে ছোট কোনো উপহার দিন। যেমন: ৫০০ টাকার বাজার করলে ১ প্যাকেট লবন ফ্রি। এতে মানুষ বেশি কিনতে উৎসাহিত হয়।'
+components/BusinessTools.tsx:21:    title: 'কম্বো প্যাক তৈরি করুন',
+components/BusinessTools.tsx:22:    details: 'জনপ্রিয় পণ্যগুলো (যেমন: চাল, ডাল, তেল) একসাথে মিলিয়ে প্যাকেজ তৈরি করুন। আলাদা কেনার চেয়ে প্যাকেজে কিছুটা দাম কমিয়ে দিন।'
+components/BusinessTools.tsx:25:    title: 'কাস্টমারদের সাথে ভালো সম্পর্ক রাখুন',
+components/BusinessTools.tsx:26:    details: 'হাসিমুখে কথা বলুন। নিয়মিত কাস্টমারদের নাম মনে রাখুন এবং তাদের কুশল বিনিময় করুন। সততাই ব্যবসার মূলধন।'
+components/BusinessTools.tsx:29:    title: 'স্থানীয়ভাবে প্রচার করুন',
+components/BusinessTools.tsx:30:    details: 'দোকানের সামনে আকর্ষণীয় ব্যানার লাগান। বিশেষ দিবস বা উৎসবে বিশেষ ছাড়ের ব্যবস্থা করুন এবং তা মাইকিং বা লিফলেটের মাধ্যমে জানান।'
+components/BusinessTools.tsx:33:    title: 'পণ্য সুন্দরভাবে সাজিয়ে রাখুন',
+components/BusinessTools.tsx:34:    details: 'দোকান পরিষ্কার রাখুন। বেশি বিক্রিত পণ্যগুলো এবং নতুন পণ্যগুলো চোখের সামনে বা কাউন্টারের কাছে রাখুন।'
+components/BusinessTools.tsx:80:                <label className="block text-slate-400 mb-2">পণ্যের চাহিদা কেমন?</label>
+components/BusinessTools.tsx:82:                  <option value="">চাহিদার স্তর নির্বাচন করুন</option>
+components/BusinessTools.tsx:83:                  <option value="High">উচ্চ</option>
+components/BusinessTools.tsx:84:                  <option value="Medium">মধ্যম</option>
+components/BusinessTools.tsx:85:                  <option value="Low">নিম্ন</option>
+components/BusinessTools.tsx:89:                <label className="block text-slate-400 mb-2">আপনার কাস্টমার কারা?</label>
+components/BusinessTools.tsx:90:                <input name="customerType" onChange={handleInputChange} placeholder="যেমন: ছাত্রছাত্রী, চাকরিজীবী" className="w-full bg-slate-950 border border-slate-700 rounded-lg p-3 text-white" />
+components/BusinessTools.tsx:93:                <label className="block text-slate-400 mb-2">বর্তমান বাজারের অবস্থা</label>
+components/BusinessTools.tsx:94:                <input name="marketCondition" onChange={handleInputChange} placeholder="যেমন: ঈদের বাজার, প্রতিযোগিতা বেশি" className="w-full bg-slate-950 border border-slate-700 rounded-lg p-3 text-white" />
+components/BusinessTools.tsx:101:                {isLoading ? 'বিশ্লেষণ চলছে...' : 'দাম বিশ্লেষণ করুন'}
+components/BusinessTools.tsx:111:              <h2 className="text-3xl font-bold text-white mb-2">ক্ষতি প্রতিরোধ</h2>
+components/BusinessTools.tsx:112:              <p className="text-slate-400">আপনার ব্যবসার বর্তমান পরিস্থিতি বর্ণনা করে সম্ভাব্য ঝুঁকি এবং তা থেকে উত্তরণের উপায় জানুন।</p>
+components/BusinessTools.tsx:115:              <h3 className="text-xl font-bold text-white mb-4">পরিস্থিতি বর্ণনা করুন</h3>
+components/BusinessTools.tsx:117:                <label className="block text-slate-400 mb-2">আপনার ব্যবসার বর্তমান অবস্থা বিস্তারিত লিখুন</label>
+components/BusinessTools.tsx:122:                  placeholder="যেমন: গত এক মাস ধরে বিক্রি কমে গেছে, কিন্তু দোকানের খরচ একই আছে। মনে হচ্ছে নতুন প্রতিযোগী আসার কারণে এমন হচ্ছে..."
+components/BusinessTools.tsx:131:                {isLoading ? 'বিশ্লেষণ চলছে...' : 'বিশ্লেষণ করুন'}
+components/BusinessTools.tsx:141:              <h2 className="text-3xl font-bold text-white mb-2">বিক্রি বাড়ানোর উপায়</h2>
+components/BusinessTools.tsx:142:              <p className="text-slate-400">আপনার ব্যবসার বিক্রি বাড়ানোর জন্য কিছু সহজ ও কম খরচের আইডিয়া।</p>
+components/BusinessTools.tsx:147:                <h3 className="text-xl font-bold">সহজ কৌশল</h3>
+components/BusinessTools.tsx:169:              <h3 className="text-xl font-bold text-white mb-4">কাস্টম টিপস পান</h3>
+components/BusinessTools.tsx:174:                placeholder="আপনার ব্যবসার ধরন লিখুন (যেমন: মুদির দোকান, কাপড়ের দোকান)..."
+components/BusinessTools.tsx:182:                {isLoading ? 'লোড হচ্ছে...' : 'কাস্টম আইডিয়া দেখুন'}
+components/BusinessTools.tsx:192:              <h2 className="text-3xl font-bold text-white mb-2">করণীয় নির্দেশনা</h2>
+components/BusinessTools.tsx:193:              <p className="text-slate-400">ব্যবসার পারফরম্যান্স উন্নত করতে দৈনিক তথ্য দিন এবং AI থেকে পরামর্শ নিন।</p>
+components/BusinessTools.tsx:196:              <h3 className="text-xl font-bold text-white mb-4">তথ্য জমা দিন</h3>
+components/BusinessTools.tsx:198:                <label className="block text-slate-400 mb-2">আজকের মোট বিক্রি (টাকা)</label>
+components/BusinessTools.tsx:199:                <input name="dailySales" onChange={handleInputChange} placeholder="যেমন: ১৫০০০" className="w-full bg-slate-950 border border-slate-700 rounded-lg p-3 text-white" />
+components/BusinessTools.tsx:202:                <label className="block text-slate-400 mb-2">আজকের মোট খরচ (টাকা)</label>
+components/BusinessTools.tsx:203:                <input name="dailyExpense" onChange={handleInputChange} placeholder="যেমন: ৮০০০" className="w-full bg-slate-950 border border-slate-700 rounded-lg p-3 text-white" />
+components/BusinessTools.tsx:206:                <label className="block text-slate-400 mb-2">স্টকের অবস্থা</label>
+components/BusinessTools.tsx:207:                <input name="stockStatus" onChange={handleInputChange} placeholder="যেমন: কিছু পণ্য প্রায় শেষ" className="w-full bg-slate-950 border border-slate-700 rounded-lg p-3 text-white" />
+components/BusinessTools.tsx:210:                <label className="block text-slate-400 mb-2">কাস্টমারদের মতামত</label>
+components/BusinessTools.tsx:211:                <input name="customerFeedback" onChange={handleInputChange} placeholder="যেমন: কাস্টমাররা একটি নতুন পণ্যের খোঁজ করছে" className="w-full bg-slate-950 border border-slate-700 rounded-lg p-3 text-white" />
+components/BusinessTools.tsx:218:                {isLoading ? 'বিশ্লেষণ চলছে...' : 'পরামর্শ নিন'}
+components/BusinessTools.tsx:237:            AI বিশ্লেষণ
+components/Calculator.tsx:97:      <p className="mt-8 text-slate-500 text-center text-sm">সাধারণ হিসাব-নিকাশের জন্য ক্যালকুলেটর ব্যবহার করুন।</p>
+components/Chat.tsx:8:    { role: 'model', text: 'নমস্কার! আমি কীভাবে আপনার ব্যবসার উন্নতিতে সাহায্য করতে পারি?' }
+components/Chat.tsx:63:              <span className="text-slate-400 text-sm">টাইপ করছে...</span>
+components/Chat.tsx:77:            placeholder="আপনার প্রশ্নটি এখানে লিখুন..."
+components/DueManager.tsx:67:      setError("বকেয়া সংরক্ষণ করা যায়নি। অনুগ্রহ করে আবার চেষ্টা করুন।");
+components/DueManager.tsx:123:                    বাতিল
+components/DueManager.tsx:129:                    সংরক্ষণ করুন
+components/DueManager.tsx:217:                    বাতিল
+components/DueManager.tsx:354:                <th className="px-6 py-4">বকেয়ার পরিমাণ</th>
+components/DueManager.tsx:389:          অ্যাডমিনের জন্য পরামর্শ
+components/DueManager.tsx:392:          মোট বকেয়ার পরিমাণ বেশ উল্লেখযোগ্য। বিশেষ করে যে সমস্ত ব্যবসা ৩০ দিনের বেশি সময় ধরে বকেয়া রেখেছে, তাদের দিকে নজর দেওয়া প্রয়োজন।
+components/DueManager.tsx:397:            <span><strong className="text-white">{t.sendReminder || 'Send Reminder:'}</strong> যেসকল ব্যবসার বকেয়া 'মধ্যম' বা 'উচ্চ' ঝুঁকিতে আছে, তাদের ফোন কল বা WhatsApp এর মাধ্যমে ভদ্রভাবে একটি রিমাইন্ডার দিন।</span>
+components/DueManager.tsx:401:            <span><strong className="text-white">{t.limitCredit || 'Limit New Credit:'}</strong> 'উচ্চ ঝুঁকি' চিহ্নিত ব্যবসাগুলোকে নতুন করে বাকিতে পণ্য দেওয়ার আগে পুরনো বকেয়ার আংশিক পরিশোধের জন্য অনুরোধ করুন।</span>
+components/DueManager.tsx:405:            <span><strong className="text-white">{t.discuss || 'Discuss:'}</strong> বড় অংকের বকেয়ার ক্ষেত্রে গ্রাহকের সাথে সরাসরি কথা বলে পেমেন্টের একটি সম্ভাব্য তারিখ নির্ধারণ করার চেষ্টা করুন।</span>
+components/Login.tsx:45:        setError(language === "en" ? "Native login failed. Please try again." : "নেটিভ লগইন ব্যর্থ হয়েছে। আবার চেষ্টা করুন।");
+components/Login.tsx:123:        setError(language === "en" ? "Login cancelled. Please try again." : "লগইন বাতিল করা হয়েছে। আবার চেষ্টা করুন।");
+components/Login.tsx:131:        setError(language === "en" ? "Google sign-in failed. Please try again." : "গুগল সাইন ইন ব্যর্থ হয়েছে। আবার চেষ্টা করুন।");
+components/Login.tsx:152:          <span className="text-sm font-medium">{language === 'en' ? 'English 🇬🇧' : 'বাংলা 🇧🇩'}</span>
+components/Login.tsx:162:              বাংলা 🇧🇩
+components/Login.tsx:236:              <span className="font-bold">{language === "en" ? "Configuration Required" : "কনফিগারেশন প্রয়োজন"}</span>
+components/Login.tsx:239:              {language === "en" ? "This domain is not authorized in Firebase. Please add it:" : "এই ডোমেইনটি ফায়ারবেসে অনুমোদিত নয়। অনুগ্রহ করে এটি যোগ করুন:"}
+components/Notepad.tsx:23:        timestamp: new Date().toLocaleString('bn-BD') + ' (সম্পাদিত)'
+components/Notepad.tsx:67:            নোটপ্যাড
+components/Notepad.tsx:70:            এখানে নিজের আইডিয়া, টাস্ক এবং রিমাইন্ডার বানিয়ে রাখতে পারবেন। নোটটি তৈরি করুন, খুঁজুন, কপি করুন বা সহজে এডিট করুন।
+components/Notepad.tsx:74:          {notes.length} টি নোট
+components/Notepad.tsx:83:            <p className="text-slate-500 text-sm">আপনার গুরুত্বপূর্ণ তথ্য সংরক্ষণ করুন</p>
+components/Notepad.tsx:86:            <span className="px-3 py-1 rounded-full bg-slate-900/80 border border-slate-800">সম্পাদনা: {editingId ? 'চলছে' : 'নতুন'}</span>
+components/Notepad.tsx:87:            <span className="px-3 py-1 rounded-full bg-slate-900/80 border border-slate-800">অক্ষর: {note.length}</span>
+components/Notepad.tsx:99:              <FileText size={16} /> নোট প্রস্তুতি
+components/Notepad.tsx:108:                বাতিল
+components/Notepad.tsx:116:              <Save size={18} /> {editingId ? 'আপডেট করুন' : 'সেভ করুন'}
+components/Notepad.tsx:128:            placeholder="নোট খুঁজুন..."
+components/Notepad.tsx:148:                      title="এডিট"
+components/Notepad.tsx:155:                      title="কপি"
+components/Notepad.tsx:162:                      title="মুছুন"
+components/Notepad.tsx:172:              কোনো নোট পাওয়া যায়নি
+components/Notepad.tsx:179:              <p className="text-slate-200 font-medium">আপনার নোটপ্যাড এখন খালি</p>
+components/Notepad.tsx:180:              <p className="text-slate-400 text-sm">উপরের বাক্সে ক্লিক করে প্রথম নোট তৈরি করুন।</p>
+components/Reports.tsx:105:          আজকের বিক্রি
+components/Reports.tsx:178:          <span className="text-xl">⚡</span> AI বিশ্লেষণ
+components/Reports.tsx:236:                বিক্রি যোগ করুন
+components/SetupWizard.tsx:34:        'মুদির দোকান',
+components/SetupWizard.tsx:35:        'কাপড়ের দোকান',
+components/SetupWizard.tsx:36:        'ইলেকট্রনিক্স',
+components/SetupWizard.tsx:37:        'হার্ডওয়্যার',
+components/SetupWizard.tsx:38:        'ফার্মেসি',
+components/SetupWizard.tsx:39:        'রেস্তোরাঁ',
+components/SetupWizard.tsx:40:        'সেলুন/বিউটি',
+components/SetupWizard.tsx:41:        'অন্যান্য'
+components/SetupWizard.tsx:45:        'ঢাকা',
+components/SetupWizard.tsx:46:        'গাজীপুর',
+components/SetupWizard.tsx:47:        'গোপালগঞ্জ',
+components/SetupWizard.tsx:48:        'কিশোরগঞ্জ',
+components/SetupWizard.tsx:49:        'মাদারীপুর',
+components/SetupWizard.tsx:50:        'মানিকগঞ্জ',
+components/SetupWizard.tsx:51:        'মুন্সিগঞ্জ',
+components/SetupWizard.tsx:52:        'নারায়ণগঞ্জ',
+components/SetupWizard.tsx:53:        'নরসিংদী',
+components/SetupWizard.tsx:54:        'রাজবাড়ী',
+components/SetupWizard.tsx:55:        'শরীয়তপুর',
+components/SetupWizard.tsx:56:        'টাঙ্গাইল',
+components/SetupWizard.tsx:57:        'ফরিদপুর',
+components/SetupWizard.tsx:58:        'চট্টগ্রাম',
+components/SetupWizard.tsx:59:        'কুমিল্লা',
+components/SetupWizard.tsx:60:        'ব্রাহ্মণবাড়িয়া',
+components/SetupWizard.tsx:61:        'ফেনী',
+components/SetupWizard.tsx:62:        'চাঁদপুর',
+components/SetupWizard.tsx:63:        'লক্ষ্মীপুর',
+components/SetupWizard.tsx:64:        'নোয়াখালী',
+components/SetupWizard.tsx:65:        'কক্সবাজার',
+components/SetupWizard.tsx:66:        'বান্দরবান',
+components/SetupWizard.tsx:67:        'রাঙামাটি',
+components/SetupWizard.tsx:68:        'খাগড়াছড়ি',
+components/SetupWizard.tsx:69:        'রাজশাহী',
+components/SetupWizard.tsx:70:        'নাটোর',
+components/SetupWizard.tsx:71:        'চাঁপাইনবাবগঞ্জ',
+components/SetupWizard.tsx:72:        'নওগাঁ',
+components/SetupWizard.tsx:73:        'সিরাজগঞ্জ',
+components/SetupWizard.tsx:74:        'পাবনা',
+components/SetupWizard.tsx:75:        'বগুড়া',
+components/SetupWizard.tsx:76:        'জয়পুরহাট',
+components/SetupWizard.tsx:77:        'রংপুর',
+components/SetupWizard.tsx:78:        'দিনাজপুর',
+components/SetupWizard.tsx:79:        'গাইবান্ধা',
+components/SetupWizard.tsx:80:        'কুড়িগ্রাম',
+components/SetupWizard.tsx:81:        'লালমনিরহাট',
+components/SetupWizard.tsx:82:        'নীলফামারী',
+components/SetupWizard.tsx:83:        'পঞ্চগড়',
+components/SetupWizard.tsx:84:        'ঠাকুরগাঁও',
+components/SetupWizard.tsx:85:        'বরিশাল',
+components/SetupWizard.tsx:86:        'ভোলা',
+components/SetupWizard.tsx:87:        'পটুয়াখালী',
+components/SetupWizard.tsx:88:        'পিরোজপুর',
+components/SetupWizard.tsx:89:        'ঝালকাঠি',
+components/SetupWizard.tsx:90:        'বরগুনা',
+components/SetupWizard.tsx:91:        'খুলনা',
+components/SetupWizard.tsx:92:        'বাগেরহাট',
+components/SetupWizard.tsx:93:        'যশোর',
+components/SetupWizard.tsx:94:        'সাতক্ষীরা',
+components/SetupWizard.tsx:95:        'ঝিনাইদহ',
+components/SetupWizard.tsx:96:        'কুষ্টিয়া',
+components/SetupWizard.tsx:97:        'মাগুরা',
+components/SetupWizard.tsx:98:        'নড়াইল',
+components/SetupWizard.tsx:99:        'চুয়াডাঙ্গা',
+components/SetupWizard.tsx:100:        'মেহেরপুর',
+components/SetupWizard.tsx:101:        'সিলেট',
+components/SetupWizard.tsx:102:        'মৌলভীবাজার',
+components/SetupWizard.tsx:103:        'হবিগঞ্জ',
+components/SetupWizard.tsx:104:        'সুনামগঞ্জ',
+components/SetupWizard.tsx:105:        'ময়মনসিংহ',
+components/SetupWizard.tsx:106:        'জামালপুর',
+components/SetupWizard.tsx:107:        'নেত্রকোণা',
+components/SetupWizard.tsx:108:        'শেরপুর'
+components/SetupWizard.tsx:362:                            পূর্ববর্তী
+components/SetupWizard.tsx:371:                                পরবর্তী
+components/SetupWizard.tsx:381:                                সেটআপ সম্পূর্ণ করুন
+components/SetupWizard.tsx:389:                    যেকোনো সময় সেটিংস থেকে এই তথ্য পরিবর্তন করতে পারবেন
+components/TopbarActions.tsx:77:              {t.bengali || 'বাংলা'}
+components/DailyProfit.tsx:72:            সারা বছরের প্রতিদিনের আয় এবং লাভের বিস্তারিত হিসাব
+components/DailyProfit.tsx:177:                    এই বছরে কোনো লেনদেন পাওয়া যায়নি।
+components/PrinterSettings.tsx:69:            <div class="row bold"><span>সর্ব${t.total || 'Total'}:</span><span>${currencySymbol}1200</span></div>
+components/PrinterSettings.tsx:90:                    <p className="text-slate-400 mt-2 max-w-2xl">থার্মাল রসিদ এবং প্রিন্টার সংযোগের সকল বিকল্প এখানে সেট করুন।</p>
+components/PrinterSettings.tsx:93:                    <Printer size={18} /> থার্মাল প্রিন্টার পরিচালনা
+components/PrinterSettings.tsx:101:                            <label className="block text-slate-400 mb-2">কাগজের প্রস্থ</label>
+components/PrinterSettings.tsx:126:                            <label className="block text-slate-400 mb-2">নেটওয়ার্ক প্রিন্টার IP</label>
+components/PrinterSettings.tsx:144:                                    অটো প্রিন্ট সক্রিয়
+components/PrinterSettings.tsx:148:                                <label className="block text-slate-400 mb-2">কপির সংখ্যা</label>
+components/PrinterSettings.tsx:169:                                দোকানের লোগো দেখান
+components/PrinterSettings.tsx:178:                                QR কোড দেখান
+components/PrinterSettings.tsx:187:                                শর্তাবলী দেখান
+components/PrinterSettings.tsx:201:                            <label className="block text-slate-400 mb-2">ফন্ট সাইজ</label>
+components/PrinterSettings.tsx:209:                                <option value="large">বড়</option>
+components/PrinterSettings.tsx:215:                        <button onClick={handleSave} className="flex-1 bg-blue-600 hover:bg-blue-700 text-white rounded-2xl py-3 font-semibold transition">সেভ করুন</button>
+components/PrinterSettings.tsx:216:                        <button onClick={handleTestPrint} className="flex-1 bg-emerald-500 hover:bg-emerald-600 text-white rounded-2xl py-3 font-semibold transition">টেস্ট প্রিন্ট</button>
+components/PrinterSettings.tsx:220:                            <CheckCircle size={18} /> প্রিন্টার সেটিংস সেভ করা হয়েছে
+components/PrinterSettings.tsx:228:                            <h4 className="text-lg font-semibold text-white mb-3">থার্মাল রসিদ প্রিভিউ</h4>
+components/PrinterSettings.tsx:230:                                <p>উইন্ডো প্রিন্ট ব্যবহার করে থার্মাল স্টাইলিং সহ প্রিন্ট করুন।</p>
+components/PrinterSettings.tsx:231:                                <p>পেপার প্রস্থ, লোগো, QR কোড, শর্তাবলী এবং কপি সংখ্যা কাস্টমাইজ করুন।</p>
+components/PrinterSettings.tsx:235:                            <p className="text-slate-300 mb-3 font-semibold">প্রস্তাবিত ফরম্যাট</p>
+components/PrinterSettings.tsx:238:   [দোকানের নাম]
+components/PrinterSettings.tsx:239:   [ঠিকানা] | [ফোন]
+components/PrinterSettings.tsx:244:গ্রাহক: [নাম]
+components/PrinterSettings.tsx:245:ফোন: [নম্বর]
+components/PrinterSettings.tsx:247:${t.product || 'Product'}       পরিমাণ  দর    ${t.total || 'Total'}
+components/PrinterSettings.tsx:253:সর্ব${t.total || 'Total'}:            ${currencySymbol}190
+components/PrinterSettings.tsx:255:ধন্যবাদ! আবার আসবেন 🙏
+components/PrinterSettings.tsx:260:                            <h4 className="text-white font-semibold mb-3">ব্রাউজার প্রিন্ট ব্যাকআপ</h4>
+components/PrinterSettings.tsx:261:                            <p className="text-slate-400 text-sm">যদি থার্মাল প্রিন্টার নেটওয়ার্কে না থাকে, তাহলে উইন্ডো প্রিন্ট দিয়ে থার্মাল স্টাইলিং সহ রসিদ প্রিন্ট করুন।</p>
+components/Home.tsx:340:              <p className="text-slate-400">{targetStatus === t.successStatus || 'Success' ? 'আজকের লক্ষ্য পূরণ হয়েছে!' : targetStatus === t.goodStatus || 'Good' ? 'লক্ষ্যে খুব কাছে' : targetStatus === t.warningStatus || 'Warning' ? 'আপনি সঠিক পথে আছেন' : 'দ্রুত বিক্রি বাড়ান'}</p>
+components/Home.tsx:394:                বন্ধ করুন
+components/Home.tsx:454:                  বাতিল
+components/Home.tsx:460:                  সেভ করুন
+components/Home.tsx:481:              লাভ যোগ করুন
+components/Home.tsx:508:                  রিসেট
+components/Home.tsx:514:                  যোগ করুন
+components/Home.tsx:526:          দ্রুত অ্যাকশন
+components/Home.tsx:581:                কোনো সাম্প্রতিক লেনদেন নেই
+components/Home.tsx:593:              আজকের টিপস
+components/Home.tsx:604:            বিস্তারিত আলোচনা করুন
+components/Invoice.tsx:103:          <ArrowLeft size={20} /> ফিরে যান
+components/Invoice.tsx:116:                রসিদ
+components/Invoice.tsx:135:              গ্রাহকের তথ্য
+components/Invoice.tsx:207:              ধন্যবাদ, আবার আসবেন
+components/Invoice.tsx:227:            এডিট করুন
+components/Invoice.tsx:233:            <Printer size={20} /> প্রিন্ট করুন
+components/Invoice.tsx:239:            <Download size={20} /> ডাউনলোড করুন
+components/Invoice.tsx:366:            <Plus size={16} /> নতুন পণ্য যোগ করুন
+components/Invoice.tsx:408:            <Printer size={20} /> প্রিন্ট করুন
+components/Invoice.tsx:414:            <FileText size={20} /> ইনভয়েস তৈরি করুন
+components/QRScanner.tsx:22:    const [scanMessage, setScanMessage] = useState('নিচের বোতামে ক্লিক করে QR স্ক্যান শুরু করুন');
+components/QRScanner.tsx:119:                setScanMessage('ক্যামেরা স্ক্যানার সমর্থিত নয়');
+components/QRScanner.tsx:136:                                setScanMessage(`✅ পণ্য সক্রিয় হয়েছে`);
+components/QRScanner.tsx:140:                                    setScanMessage(`✅ ${parsed.name} যোগ হয়েছে`);
+components/QRScanner.tsx:150:                                    setScanMessage(customer ? `✅ ${customer.name} প্রোফাইল লোড হয়েছে` : t.customerScanned || '✅ Customer Scanned');
+components/QRScanner.tsx:186:                    <Camera size={18} /> QR স্ক্যান করুন
+components/QRScanner.tsx:202:                            <Printer size={16} /> QR প্রিন্ট করুন
+components/QRScanner.tsx:223:                                        সিলেক্ট
+components/QRScanner.tsx:232:                                        <Download size={14} /> ডাউনলোড
+components/QRScanner.tsx:263:                                            ডাউনলোড
+components/QRScanner.tsx:302:                            বিক্রি সম্পন্ন করুন
+components/SalesList.tsx:196:          placeholder="নাম বা ${t.product || 'Product'} দিয়ে খুঁজুন..."
+components/SalesList.tsx:211:                <th className="p-3 md:p-4 text-slate-400 font-medium text-xs md:text-sm text-right">${t.product || 'Product'}ের নাম</th>
+components/SalesList.tsx:281:                    কোনো তথ্য পাওয়া যায়নি
+components/SalesList.tsx:322:                <label className="block text-slate-400 mb-1.5 text-sm font-medium">${t.product || 'Product'}ের নাম</label>
+components/SalesList.tsx:372:                বাতিল
+components/SalesList.tsx:378:                মুছে ফেলুন
+components/PricingPlans.tsx:27:            ফ্রি <span className="text-xl text-slate-500 font-normal ml-2">{t.oneMonth || '1 Month'}</span>
+components/PricingPlans.tsx:40:            বর্তমান প্ল্যান
+components/PricingPlans.tsx:73:            প্রো প্ল্যান বেছে নিন
+components/PricingPlans.tsx:84:                <Check className="text-blue-500" size={16} /> প্রো প্ল্যানের সবকিছু
+components/PricingPlans.tsx:87:                <Check className="text-blue-500" size={16} /> ডেডিকেটেড অ্যাকাউন্ট ম্যানেজার
+components/PricingPlans.tsx:90:                <Check className="text-blue-500" size={16} /> অগ্রাধিকার সাপোর্ট
+components/PricingPlans.tsx:93:                <Check className="text-blue-500" size={16} /> কাস্টম ইন্টিগ্রেশন
+components/PricingPlans.tsx:103:            যোগাযোগ করুন
