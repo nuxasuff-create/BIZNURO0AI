@@ -3,6 +3,8 @@ import { View } from '../types';
 import { generateAIResponse } from '../geminiService';
 import { ChevronRight, ChevronDown, CheckCircle, AlertTriangle, Lightbulb } from 'lucide-react';
 import ReactMarkdown from 'react-markdown';
+import { useTheme } from '../context/ThemeContext';
+import { translations } from '../utils/translations';
 
 interface Props {
   view: View;
@@ -36,6 +38,8 @@ const salesTipsList = [
 ];
 
 const BusinessTools: React.FC<Props> = ({ view }) => {
+  const { language } = useTheme();
+  const t = translations[language] as any;
   const [formData, setFormData] = useState<any>({});
   const [result, setResult] = useState<string | null>(null);
   const [isLoading, setIsLoading] = useState(false);

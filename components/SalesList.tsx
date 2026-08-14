@@ -312,7 +312,7 @@ const SalesList: React.FC = () => {
                     type="text"
                     value={newSale.customerName}
                     onChange={(e) => setNewSale({ ...newSale, customerName: e.target.value })}
-                    placeholder="{t.nameOptional || 'Enter name (Optional)'}"
+                    placeholder={t.nameOptional || 'Enter name (Optional)'}
                     className="w-full bg-slate-950 border border-slate-800 rounded-xl py-3 pl-10 pr-4 text-white focus:border-blue-500 outline-none transition-all"
                   />
                 </div>
@@ -326,7 +326,7 @@ const SalesList: React.FC = () => {
                     type="text"
                     value={newSale.productName}
                     onChange={(e) => setNewSale({ ...newSale, productName: e.target.value })}
-                    placeholder="{t.whatDidYouSell || 'What did you sell?'}"
+                    placeholder={t.whatDidYouSell || 'What did you sell?'}
                     className="w-full bg-slate-950 border border-slate-800 rounded-xl py-3 pl-10 pr-4 text-white focus:border-blue-500 outline-none transition-all"
                     required
                   />

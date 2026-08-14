@@ -6,8 +6,8 @@ const config: CapacitorConfig = {
   webDir: 'dist',
   plugins: {
     Keyboard: {
-      resize: 'body',
-      style: 'dark',
+      resize: 'body' as any,
+      style: 'dark' as any,
       resizeOnFullScreen: true,
     },
     SplashScreen: {
