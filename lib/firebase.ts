@@ -1,16 +1,18 @@
 import { initializeApp } from "firebase/app";
 import { getAuth } from "firebase/auth";
-import { getFirestore } from "firebase/firestore";
+import { initializeFirestore, persistentLocalCache } from "firebase/firestore";
 
 const firebaseConfig = {
-  apiKey: "AIzaSyBCgGqa2HPL1iLt7U5wsgrP5CYYS2LX844",
-  authDomain: "smart-tread-ai.firebaseapp.com",
-  projectId: "smart-tread-ai",
-  storageBucket: "smart-tread-ai.firebasestorage.app",
-  messagingSenderId: "584149203613",
-  appId: "1:584149203613:web:fbc35191ce3e5e3e33b274"
+  apiKey: "AIzaSyDwxZ1tfbw47MELXCr8gPcymzW5c-0-xbA",
+  authDomain: "biznuro-ai.firebaseapp.com",
+  projectId: "biznuro-ai",
+  storageBucket: "biznuro-ai.firebasestorage.app",
+  messagingSenderId: "827406738002",
+  appId: "1:827406738002:web:bc7ef1a4236d1c0e6eb58b"
 };
 
 const app = initializeApp(firebaseConfig);
 export const auth = getAuth(app);
-export const db = getFirestore(app);
+export const db = initializeFirestore(app, {
+  localCache: persistentLocalCache({})
+});

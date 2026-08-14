@@ -6,6 +6,7 @@ import { Menu, LogOut, AlertTriangle, Copy } from 'lucide-react';
 import { DataProvider, useData } from './context/DataContext';
 import { auth } from './lib/firebase';
 import { signOut } from 'firebase/auth';
+import { AuthProvider } from './context/AuthContext';
 import { ThemeProvider, useTheme } from './context/ThemeContext';
 import { CurrencyProvider } from './context/CurrencyContext';
 import TopbarActions from './components/TopbarActions';
@@ -29,6 +30,8 @@ const TargetHistory = lazy(() => import('./components/TargetHistory'));
 const PrinterSettings = lazy(() => import('./components/PrinterSettings'));
 const QRScanner = lazy(() => import('./components/QRScanner'));
 const CyberpunkAdmin = lazy(() => import('./components/Admin/CyberpunkAdmin'));
+const ProfilePage = lazy(() => import('./components/Profile/ProfilePage'));
+
 
 const LoadingFallback = () => (
   <div className="flex items-center justify-center h-full min-h-[400px] w-full">
@@ -92,6 +95,8 @@ const Dashboard: React.FC = () => {
         return <SalesList />;
       case View.DAILY_PROFIT:
         return <DailyProfit />;
+      case View.PROFILE:
+        return <ProfilePage />;
       case View.CHAT:
         return <Chat />;
       case View.CALENDAR:
@@ -236,19 +241,21 @@ const App: React.FC = () => {
   return (
     <ThemeProvider>
       <CurrencyProvider>
-        <DataProvider>
-        <Router>
-          <Suspense fallback={<LoadingFallback />}>
-            <Routes>
-              <Route path="/" element={<Login />} />
-              <Route path="/dashboard" element={<Dashboard />} />
-              <Route path="/admin-9XqA72-hidden" element={<CyberpunkAdmin />} />
-              {/* Catch all - redirect to home (login) */}
-              <Route path="*" element={<Navigate to="/" replace />} />
-            </Routes>
-          </Suspense>
-        </Router>
-      </DataProvider>
+        <AuthProvider>
+          <DataProvider>
+            <Router>
+              <Suspense fallback={<LoadingFallback />}>
+                <Routes>
+                  <Route path="/" element={<Login />} />
+                  <Route path="/dashboard" element={<Dashboard />} />
+                  <Route path="/admin-9XqA72-hidden" element={<CyberpunkAdmin />} />
+                  {/* Catch all - redirect to home (login) */}
+                  <Route path="*" element={<Navigate to="/" replace />} />
+                </Routes>
+              </Suspense>
+            </Router>
+          </DataProvider>
+        </AuthProvider>
       </CurrencyProvider>
     </ThemeProvider>
   );

@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useData } from '../../context/DataContext';
-import { Users, DollarSign, Activity, Settings, LogOut, Trash2, Edit, Save, X } from 'lucide-react';
+import { Users, DollarSign, Activity, Settings, LogOut, Trash2, Edit, Save, X, BarChart3, ShieldAlert, FileText, Server } from 'lucide-react';
 import { CustomerDue } from '../../types';
 
 const AdminPanel: React.FC = () => {
@@ -30,175 +30,101 @@ const AdminPanel: React.FC = () => {
     setEditForm({});
   };
 
+  const stats = [
+    { title: 'Total Users', value: '1,245', icon: Users, color: 'text-blue-500', trend: '+12% this month' },
+    { title: 'Active Sessions', value: '84', icon: Activity, color: 'text-green-500', trend: 'Currently Online' },
+    { title: 'Total Revenue', value: `${dues.reduce((acc, curr) => acc + curr.amount, 0).toLocaleString()} BDT`, icon: DollarSign, color: 'text-yellow-500', trend: `${dues.length} records` },
+    { title: 'System Status', value: 'Operational', icon: Server, color: 'text-emerald-500', trend: 'Uptime: 99.9%' },
+  ];
+
   return (
-    <div className="min-h-screen bg-slate-950 text-slate-50 font-sans">
+    <div className="min-h-screen bg-slate-950 text-slate-100 font-sans p-6">
       {/* Admin Header */}
-      <header className="bg-slate-900 border-b border-slate-800 p-4 flex justify-between items-center sticky top-0 z-50">
-        <div className="flex items-center gap-3">
-          <div className="bg-blue-600 p-2 rounded-lg">
-            <Settings size={20} className="text-white" />
-          </div>
-          <h1 className="text-xl font-bold text-white">System Administration</h1>
+      <header className="flex justify-between items-center mb-8 bg-slate-900/50 p-6 rounded-2xl border border-slate-800">
+        <div>
+          <h1 className="text-2xl font-black text-white tracking-tight">System Admin</h1>
+          <p className="text-slate-400 text-sm">Dashboard Overview & Data Management</p>
         </div>
         <div className="flex items-center gap-4">
-          <span className="text-slate-400 text-sm">Logged in as Admin</span>
           <button
             onClick={handleLogout}
-            className="flex items-center gap-2 bg-red-500/10 text-red-500 hover:bg-red-500/20 px-4 py-2 rounded-lg text-sm font-medium transition"
+            className="flex items-center gap-2 bg-red-500/10 text-red-500 hover:bg-red-500/20 px-5 py-2.5 rounded-xl text-sm font-semibold transition"
           >
             <LogOut size={16} /> Logout
           </button>
         </div>
       </header>
 
-      <main className="p-4 max-w-7xl mx-auto space-y-6">
+      <main className="max-w-7xl mx-auto space-y-8">
         {/* Stats Grid */}
         <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
-          <div className="bg-slate-900 border border-slate-800 p-6 rounded-xl">
-            <div className="flex justify-between items-start mb-2">
-              <span className="text-slate-400 text-sm font-medium">Total Users</span>
-              <Users size={18} className="text-blue-500" />
+          {stats.map((s, i) => (
+            <div key={i} className="bg-slate-900 border border-slate-800 p-6 rounded-2xl shadow-sm hover:border-slate-700 transition">
+              <div className="flex justify-between items-start mb-4">
+                <span className="text-slate-400 text-sm font-medium">{s.title}</span>
+                <s.icon size={20} className={s.color} />
+              </div>
+              <div className="text-3xl font-black text-white mb-1">{s.value}</div>
+              <div className="text-xs text-slate-500 font-mono">{s.trend}</div>
             </div>
-            <div className="text-2xl font-bold text-white">1,245</div>
-            <div className="text-xs text-green-500 mt-1">+12% from last month</div>
-          </div>
-
-          <div className="bg-slate-900 border border-slate-800 p-6 rounded-xl">
-            <div className="flex justify-between items-start mb-2">
-              <span className="text-slate-400 text-sm font-medium">Active Sessions</span>
-              <Activity size={18} className="text-green-500" />
-            </div>
-            <div className="text-2xl font-bold text-white">84</div>
-            <div className="text-xs text-slate-500 mt-1">Currently online</div>
-          </div>
-
-          <div className="bg-slate-900 border border-slate-800 p-6 rounded-xl">
-            <div className="flex justify-between items-start mb-2">
-              <span className="text-slate-400 text-sm font-medium">Total Revenue (Tracked)</span>
-              <DollarSign size={18} className="text-yellow-500" />
-            </div>
-            <div className="text-2xl font-bold text-white">
-              {dues.reduce((acc, curr) => acc + curr.amount, 0).toLocaleString()} BDT
-            </div>
-            <div className="text-xs text-slate-500 mt-1">From {dues.length} due records</div>
-          </div>
-
-          <div className="bg-slate-900 border border-slate-800 p-6 rounded-xl">
-            <div className="flex justify-between items-start mb-2">
-              <span className="text-slate-400 text-sm font-medium">System Status</span>
-              <div className="w-2 h-2 rounded-full bg-green-500 animate-pulse"></div>
-            </div>
-            <div className="text-2xl font-bold text-white">Operational</div>
-            <div className="text-xs text-slate-500 mt-1">Uptime: 99.9%</div>
-          </div>
+          ))}
         </div>
 
         {/* Data Management Section */}
-        <div className="bg-slate-900 border border-slate-800 rounded-xl overflow-hidden">
-          <div className="p-6 border-b border-slate-800 flex justify-between items-center">
-            <h2 className="text-lg font-bold text-white">Application Data: Customer Dues</h2>
-            <div className="flex gap-2">
-              <button className="text-xs bg-slate-800 hover:bg-slate-700 text-white px-3 py-1.5 rounded-lg transition">
-                Export CSV
-              </button>
+        <div className="bg-slate-900 border border-slate-800 rounded-2xl overflow-hidden shadow-lg">
+          <div className="p-6 border-b border-slate-800 flex justify-between items-center bg-slate-900/50">
+            <h2 className="text-lg font-bold text-white flex items-center gap-2">
+              <FileText size={20} className="text-cyan-500"/> Application Data: Customer Dues
+            </h2>
+            <div className="flex gap-3">
+              <button className="text-xs bg-slate-800 hover:bg-slate-700 text-white px-4 py-2 rounded-xl transition font-medium">Export CSV</button>
+              <button className="text-xs bg-cyan-600 hover:bg-cyan-500 text-white px-4 py-2 rounded-xl transition font-medium">Add New Record</button>
             </div>
           </div>
 
           <div className="overflow-x-auto">
             <table className="w-full text-left text-sm text-slate-400">
-              <thead className="bg-slate-950 text-xs uppercase font-medium">
+              <thead className="bg-slate-950/50 text-slate-500 text-xs uppercase font-bold tracking-wider">
                 <tr>
                   <th className="px-6 py-4">ID</th>
-                  <th className="px-6 py-4">Customer Name</th>
+                  <th className="px-6 py-4">Customer</th>
                   <th className="px-6 py-4">Mobile</th>
-                  <th className="px-6 py-4">Amount (BDT)</th>
-                  <th className="px-6 py-4">Days Pending</th>
-                  <th className="px-6 py-4">Risk Level</th>
+                  <th className="px-6 py-4">Amount</th>
+                  <th className="px-6 py-4">Days</th>
+                  <th className="px-6 py-4">Risk</th>
                   <th className="px-6 py-4 text-right">Actions</th>
                 </tr>
               </thead>
               <tbody className="divide-y divide-slate-800">
                 {dues.map((due) => (
-                  <tr key={due.id} className="hover:bg-slate-800/50 transition group">
-                    <td className="px-6 py-4 font-mono text-xs">{due.id}</td>
-
+                  <tr key={due.id} className="hover:bg-slate-800/30 transition">
+                    <td className="px-6 py-4 font-mono text-xs">{due.id.slice(0,8)}</td>
                     {editingId === due.id ? (
                       <>
-                        <td className="px-6 py-4">
-                          <input
-                            value={editForm.name}
-                            onChange={e => setEditForm({ ...editForm, name: e.target.value })}
-                            className="bg-slate-950 border border-slate-700 rounded p-1 text-white w-full"
-                          />
-                        </td>
-                        <td className="px-6 py-4">
-                          <input
-                            value={editForm.mobile}
-                            onChange={e => setEditForm({ ...editForm, mobile: e.target.value })}
-                            className="bg-slate-950 border border-slate-700 rounded p-1 text-white w-full"
-                          />
-                        </td>
-                        <td className="px-6 py-4">
-                          <input
-                            type="number"
-                            value={editForm.amount}
-                            onChange={e => setEditForm({ ...editForm, amount: Number(e.target.value) })}
-                            className="bg-slate-950 border border-slate-700 rounded p-1 text-white w-24"
-                          />
-                        </td>
-                        <td className="px-6 py-4">
-                          <input
-                            type="number"
-                            value={editForm.daysPending}
-                            onChange={e => setEditForm({ ...editForm, daysPending: Number(e.target.value) })}
-                            className="bg-slate-950 border border-slate-700 rounded p-1 text-white w-16"
-                          />
-                        </td>
-                        <td className="px-6 py-4">
-                          <select
-                            value={editForm.risk}
-                            onChange={e => setEditForm({ ...editForm, risk: e.target.value as any })}
-                            className="bg-slate-950 border border-slate-700 rounded p-1 text-white w-full"
-                          >
-                            <option value="Low">Low</option>
-                            <option value="Medium">Medium</option>
-                            <option value="High">High</option>
-                          </select>
-                        </td>
+                        <td className="px-6 py-4"><input value={editForm.name} onChange={e => setEditForm({ ...editForm, name: e.target.value })} className="bg-slate-950 border border-slate-700 rounded p-1.5 text-white w-full"/></td>
+                        <td className="px-6 py-4"><input value={editForm.mobile} onChange={e => setEditForm({ ...editForm, mobile: e.target.value })} className="bg-slate-950 border border-slate-700 rounded p-1.5 text-white w-full"/></td>
+                        <td className="px-6 py-4"><input type="number" value={editForm.amount} onChange={e => setEditForm({ ...editForm, amount: Number(e.target.value) })} className="bg-slate-950 border border-slate-700 rounded p-1.5 text-white w-24"/></td>
+                        <td className="px-6 py-4"><input type="number" value={editForm.daysPending} onChange={e => setEditForm({ ...editForm, daysPending: Number(e.target.value) })} className="bg-slate-950 border border-slate-700 rounded p-1.5 text-white w-16"/></td>
+                        <td className="px-6 py-4"><select value={editForm.risk} onChange={e => setEditForm({ ...editForm, risk: e.target.value as any })} className="bg-slate-950 border border-slate-700 rounded p-1.5 text-white w-full"><option value="Low">Low</option><option value="Medium">Medium</option><option value="High">High</option></select></td>
                         <td className="px-6 py-4 text-right">
-                          <div className="flex justify-end gap-2">
-                            <button onClick={saveEdit} className="text-green-500 hover:bg-green-500/10 p-1 rounded">
-                              <Save size={16} />
-                            </button>
-                            <button onClick={cancelEdit} className="text-red-500 hover:bg-red-500/10 p-1 rounded">
-                              <X size={16} />
-                            </button>
-                          </div>
+                          <button onClick={saveEdit} className="text-green-500 mr-3"><Save size={18} /></button>
+                          <button onClick={cancelEdit} className="text-red-500"><X size={18} /></button>
                         </td>
                       </>
                     ) : (
                       <>
-                        <td className="px-6 py-4 font-medium text-white">{due.name}</td>
+                        <td className="px-6 py-4 font-semibold text-slate-100">{due.name}</td>
                         <td className="px-6 py-4">{due.mobile}</td>
-                        <td className="px-6 py-4 font-mono">{due.amount.toLocaleString()}</td>
+                        <td className="px-6 py-4 font-mono font-medium">{due.amount.toLocaleString()}</td>
                         <td className="px-6 py-4">{due.daysPending}</td>
                         <td className="px-6 py-4">
-                          <span className={`px-2 py-1 rounded text-xs border ${due.risk === 'High' ? 'border-red-500 text-red-500 bg-red-500/10' :
-                              due.risk === 'Medium' ? 'border-yellow-500 text-yellow-500 bg-yellow-500/10' :
-                                'border-green-500 text-green-500 bg-green-500/10'
-                            }`}>
+                          <span className={`px-3 py-1 rounded-full text-xs font-bold ${due.risk === 'High' ? 'bg-red-500/10 text-red-400' : due.risk === 'Medium' ? 'bg-yellow-500/10 text-yellow-400' : 'bg-emerald-500/10 text-emerald-400'}`}>
                             {due.risk}
                           </span>
                         </td>
-                        <td className="px-6 py-4 text-right">
-                          <div className="flex justify-end gap-2 opacity-0 group-hover:opacity-100 transition">
-                            <button onClick={() => startEdit(due)} className="text-blue-400 hover:bg-blue-500/10 p-1 rounded">
-                              <Edit size={16} />
-                            </button>
-                            <button onClick={() => deleteDue(due.id)} className="text-red-400 hover:bg-red-500/10 p-1 rounded">
-                              <Trash2 size={16} />
-                            </button>
-                          </div>
+                        <td className="px-6 py-4 text-right flex justify-end gap-3">
+                          <button onClick={() => startEdit(due)} className="text-blue-400 hover:text-blue-300"><Edit size={16} /></button>
+                          <button onClick={() => deleteDue(due.id)} className="text-red-400 hover:text-red-300"><Trash2 size={16} /></button>
                         </td>
                       </>
                     )}
@@ -209,29 +135,35 @@ const AdminPanel: React.FC = () => {
           </div>
         </div>
 
-        {/* Feature Toggles (Mock) */}
-        <div className="bg-slate-900 border border-slate-800 rounded-xl p-6">
-          <h2 className="text-lg font-bold text-white mb-4">Feature Management</h2>
-          <div className="space-y-4">
-            <div className="flex items-center justify-between p-4 bg-slate-950 rounded-lg border border-slate-800">
-              <div>
-                <h3 className="font-medium text-white">AI Invoice Suggestions</h3>
-                <p className="text-sm text-slate-500">Enable Gemini-powered product suggestions in Invoice module.</p>
-              </div>
-              <div className="relative inline-block w-12 h-6 transition duration-200 ease-in-out rounded-full cursor-pointer bg-green-500">
-                <span className="absolute left-6 top-1 bg-white w-4 h-4 rounded-full transition-transform duration-200 ease-in-out"></span>
-              </div>
+        {/* Feature Toggles & System Logs */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div className="bg-slate-900 border border-slate-800 rounded-2xl p-6">
+                <h2 className="text-lg font-bold text-white mb-6 flex items-center gap-2"><Settings size={20}/> Feature Management</h2>
+                <div className="space-y-4">
+                    {[{name: 'AI Invoice', desc: 'Gemini-powered suggestions'}, {name: 'Voice Entry', desc: 'Beta voice transactions'}].map(f => (
+                        <div key={f.name} className="flex items-center justify-between p-4 bg-slate-950 rounded-xl border border-slate-800">
+                            <div>
+                                <h3 className="font-semibold text-white">{f.name}</h3>
+                                <p className="text-xs text-slate-500">{f.desc}</p>
+                            </div>
+                            <div className="w-12 h-6 bg-emerald-600 rounded-full p-1 cursor-pointer flex justify-end">
+                                <div className="w-4 h-4 bg-white rounded-full"></div>
+                            </div>
+                        </div>
+                    ))}
+                </div>
             </div>
-            <div className="flex items-center justify-between p-4 bg-slate-950 rounded-lg border border-slate-800">
-              <div>
-                <h3 className="font-medium text-white">Voice Entry (Beta)</h3>
-                <p className="text-sm text-slate-500">Allow users to input transactions via voice commands.</p>
-              </div>
-              <div className="relative inline-block w-12 h-6 transition duration-200 ease-in-out rounded-full cursor-pointer bg-green-500">
-                <span className="absolute left-6 top-1 bg-white w-4 h-4 rounded-full transition-transform duration-200 ease-in-out"></span>
-              </div>
+
+            <div className="bg-slate-900 border border-slate-800 rounded-2xl p-6">
+                <h2 className="text-lg font-bold text-white mb-6 flex items-center gap-2"><ShieldAlert size={20}/> System Health & Logs</h2>
+                <div className="space-y-3 font-mono text-xs text-slate-500">
+                    <p className="text-emerald-500">[INFO] System operational</p>
+                    <p>[WARN] High traffic detected at 05:00 UTC</p>
+                    <p className="text-red-400">[ERR] Failed sync attempt - user_id: 849</p>
+                    <p>[INFO] Database backup completed</p>
+                    <p className="text-slate-600">...see more logs</p>
+                </div>
             </div>
-          </div>
         </div>
       </main>
     </div>

@@ -4,13 +4,14 @@ import { View } from '../types';
 import { useTheme } from '../context/ThemeContext';
 import { useCurrency } from '../context/CurrencyContext';
 import { useData } from '../context/DataContext';
+import { useAuth } from '../context/AuthContext';
 import { translations } from '../utils/translations';
 import {
   MessageSquare, Calculator, Mic, FileText,
   TrendingUp, AlertTriangle, Lightbulb,
   CreditCard, LayoutDashboard, NotebookPen,
   BarChart3, Users, X, Home, Circle, Calendar as CalendarIcon,
-  ArrowLeft, ShoppingBag, PieChart, Lock, Shield, Camera
+  ArrowLeft, ShoppingBag, PieChart, Lock, Shield, Camera, LogOut, User as UserIcon
 } from 'lucide-react';
 
 interface SidebarProps {
@@ -25,6 +26,8 @@ const Sidebar: React.FC<SidebarProps> = ({ currentView, setView, isOpen, onClose
   const { theme, language } = useTheme();
   const { currencySymbol } = useCurrency();
   const { userProfile } = useData();
+  const { user, logout, isAdmin } = useAuth();
+  
   const t = translations[language] as any;
 
   const { transactions } = useData();
@@ -75,6 +78,7 @@ const Sidebar: React.FC<SidebarProps> = ({ currentView, setView, isOpen, onClose
     { view: View.SALES_TIPS, label: t.salesTips, icon: TrendingUp, locked: !isPro },
     { view: View.LOSS_PREVENTION, label: (t as any).lossPrevention || 'Loss Prevention', icon: AlertTriangle, locked: !isPro },
     { view: View.PLANS, label: t.plans, icon: CreditCard, locked: false }, // Reusing icon
+    { view: View.PROFILE, label: 'Profile', icon: UserIcon, locked: false },
   ];
 
   return (
@@ -147,7 +151,7 @@ const Sidebar: React.FC<SidebarProps> = ({ currentView, setView, isOpen, onClose
           </div>
           <div className="mt-3 text-slate-500 text-xs">{`${currencySymbol}${todaySales.toLocaleString()} / ${currencySymbol}${todayTarget.toLocaleString()}`}</div>
         </div>
-        {(userProfile?.role === 'admin' || userProfile?.email === 'ashtosh.biswas.2026@gmail.com' || userProfile?.email === 'nuxasuff@gmail.com' || userProfile?.email === 'test@biznuro.com') && (
+        {isAdmin && (
           <div className={`p-4 border-t ${theme === 'dark' ? 'border-slate-800' : 'border-slate-200'} shrink-0`}>
             <button
               onClick={() => navigate('/admin-9XqA72-hidden')}
@@ -158,6 +162,18 @@ const Sidebar: React.FC<SidebarProps> = ({ currentView, setView, isOpen, onClose
             </button>
           </div>
         )}
+        <div className={`p-4 border-t ${theme === 'dark' ? 'border-slate-800' : 'border-slate-200'} shrink-0`}>
+          <button
+            onClick={async () => {
+              await logout();
+              navigate('/');
+            }}
+            className={`w-full flex items-center justify-center gap-2 ${theme === 'dark' ? 'bg-slate-800 hover:bg-red-900/50 text-red-400' : 'bg-slate-100 hover:bg-red-100 text-red-600'} transition-colors p-3 rounded-xl font-bold`}
+          >
+            <LogOut size={18} />
+            <span>Logout</span>
+          </button>
+        </div>
       </div>
     </>
   );

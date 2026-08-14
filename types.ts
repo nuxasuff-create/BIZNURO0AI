@@ -27,7 +27,8 @@ export enum View {
   NOTEPAD = 'NOTEPAD',
   CALENDAR = 'CALENDAR',
   SALES_LIST = 'SALES_LIST',
-  DAILY_PROFIT = 'DAILY_PROFIT'
+  DAILY_PROFIT = 'DAILY_PROFIT',
+  PROFILE = 'PROFILE'
 }
 
 export interface CustomerDue {
